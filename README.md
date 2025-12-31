@@ -320,7 +320,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🧪 About This Project
 
-This tutorial was created as an experimental project using [Claude Code](https://claude.ai/claude-code), an AI-powered coding assistant. The project demonstrates how DuckDB can simplify data analysis workflows using only SQL and the command line.
+This tutorial was created as an experimental project using Claude Code, an AI-powered coding assistant. The project demonstrates how DuckDB can simplify data analysis workflows using only SQL and the command line.
 
 ---
 
