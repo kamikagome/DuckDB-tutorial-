@@ -89,7 +89,7 @@ brew install duckdb
 duckdb --version
 ```
 
-#### 4️⃣ Generate Parquet Files (Optional)
+#### 4️⃣ Generate Parquet Files (Required for full tutorial)
 
 The tutorial includes CSV versions of all data. To create Parquet files and see the performance difference:
 
@@ -98,6 +98,8 @@ The tutorial includes CSV versions of all data. To create Parquet files and see 
 ```
 
 This uses DuckDB to convert CSV files to Parquet format.
+
+**Note:** Parquet files are generated locally and not committed to git. You must run this script after cloning the repository.
 
 #### 5️⃣ Start Analyzing!
 

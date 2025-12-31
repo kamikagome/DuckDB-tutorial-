@@ -1,0 +1,37 @@
+# Python
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+*.db
+
+# Generated Parquet files
+*.parquet
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Test outputs
+sales_summary.csv
+engineering_employees.parquet
+usa_customers.json

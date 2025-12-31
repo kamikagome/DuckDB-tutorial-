@@ -38,9 +38,10 @@ This directory contains sample data files:
 
 To create the Parquet files, run:
 ```bash
-pip install pandas pyarrow
-python3 create_parquet_files.py
+./setup_parquet.sh
 ```
+
+This script uses DuckDB CLI to convert CSV files to Parquet format.
 
 ## Getting Started
 
