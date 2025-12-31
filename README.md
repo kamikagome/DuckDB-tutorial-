@@ -83,18 +83,6 @@ Or simply download the files to a directory on your computer.
 brew install duckdb
 ```
 
-**Linux:**
-```bash
-# Download the latest release
-wget https://github.com/duckdb/duckdb/releases/download/v0.9.0/duckdb_cli-linux-amd64.zip
-unzip duckdb_cli-linux-amd64.zip
-chmod +x duckdb
-sudo mv duckdb /usr/local/bin/
-```
-
-**Windows:**
-Download from [DuckDB releases](https://github.com/duckdb/duckdb/releases) and add to PATH.
-
 #### 3️⃣ Verify Installation
 
 ```bash
