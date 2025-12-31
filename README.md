@@ -4,11 +4,13 @@
 
 ### Master SQL Analytics on CSV and Parquet Files Using DuckDB Command Line
 
-[![DuckDB](https://img.shields.io/badge/DuckDB-0.9+-yellow.svg)](https://duckdb.org/)
-[![SQL](https://img.shields.io/badge/SQL-Standard-blue.svg)](https://www.iso.org/standard/63555.html)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![DuckDB](https://img.shields.io/badge/DuckDB-0.9+-FFF000?logo=duckdb&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-Analytics-4479A1?logo=postgresql&logoColor=white)
+![Shell](https://img.shields.io/badge/Shell-Bash-4EAA25?logo=gnu-bash&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
 
-[Overview](#overview) • [Features](#features) • [Quick Start](#quick-start) • [Tutorial](#tutorial) • [Examples](#examples)
+[Overview](#overview) • [Skills](#skills-demonstrated) • [Quick Start](#quick-start) • [Tutorial](#tutorial) • [Examples](#examples)
 
 </div>
 
@@ -23,6 +25,21 @@ Perfect for data analysts, SQL enthusiasts, and developers looking to:
 - 📊 Perform SQL analytics directly on flat files (CSV, Parquet, JSON)
 - ⚡ Leverage columnar storage for faster queries
 - 💻 Use pure SQL from the command line - no programming required
+
+## 🎯 Skills Demonstrated
+
+This project showcases professional data engineering and technical communication skills:
+
+| Skill Area | Demonstrated Through |
+|------------|---------------------|
+| **SQL Analytics** | Complex queries with JOINs, aggregations, window functions, and CTEs |
+| **Data Engineering** | CSV to Parquet conversion, schema design, data format optimization |
+| **Shell Scripting** | Error handling, input validation, user feedback, exit codes |
+| **Technical Writing** | Clear documentation, step-by-step tutorials, code examples |
+| **Data Modeling** | Foreign key relationships, normalized schema design, data dictionary |
+| **CLI Proficiency** | Command-line tools, piping, automation, scripting |
+| **Version Control** | Git workflow, .gitignore best practices, repository structure |
+| **Developer Experience** | Setup automation, troubleshooting guides, clear error messages |
 
 ## ✨ Features
 
@@ -70,11 +87,11 @@ duckdb-tutorial/
 #### 1️⃣ Clone or Download the Repository
 
 ```bash
-git clone https://github.com/yourusername/duckdb-tutorial.git
+git clone https://github.com/[your-username]/duckdb-tutorial.git
 cd duckdb-tutorial
 ```
 
-Or simply download the files to a directory on your computer.
+> **Note:** Replace `[your-username]` with your actual GitHub username, or simply download the files to a directory on your computer.
 
 #### 2️⃣ Install DuckDB CLI
 
@@ -179,6 +196,7 @@ ORDER BY avg_salary DESC;
 ### Example 3: Join Sales and Inventory Data
 
 ```sql
+-- Simple join showing sold vs stock
 SELECT
     s.product,
     SUM(s.quantity) as total_sold,
@@ -186,7 +204,21 @@ SELECT
     i.warehouse
 FROM 'sales_data.csv' s
 LEFT JOIN 'inventory.parquet' i ON s.product = i.product_name
-GROUP BY s.product, i.stock_quantity, i.warehouse;
+GROUP BY s.product, i.stock_quantity, i.warehouse
+ORDER BY total_sold DESC;
+```
+
+**Better approach - Aggregate inventory per product:**
+```sql
+SELECT
+    s.product,
+    SUM(s.quantity) as total_sold,
+    MAX(i.stock_quantity) as current_stock,
+    COUNT(DISTINCT i.warehouse) as warehouse_count
+FROM 'sales_data.csv' s
+LEFT JOIN 'inventory.parquet' i ON s.product = i.product_name
+GROUP BY s.product
+ORDER BY total_sold DESC;
 ```
 
 ### Example 4: Customer Analysis from Command Line

@@ -198,9 +198,9 @@ SELECT
     date,
     product,
     quantity * price as daily_revenue,
-    SUM(quantity * price) OVER (ORDER BY date) as running_total
+    SUM(quantity * price) OVER (ORDER BY date, product) as running_total
 FROM 'sales_data.csv'
-ORDER BY date;
+ORDER BY date, product;
 ```
 
 ### 3. Rank regions by sales
@@ -217,6 +217,7 @@ GROUP BY region;
 
 ### Join sales with inventory (by product name)
 ```sql
+-- Simple join showing sold vs stock
 SELECT
     s.product,
     SUM(s.quantity) as total_sold,
@@ -224,7 +225,21 @@ SELECT
     i.warehouse
 FROM 'sales_data.csv' s
 LEFT JOIN 'inventory.parquet' i ON s.product = i.product_name
-GROUP BY s.product, i.stock_quantity, i.warehouse;
+GROUP BY s.product, i.stock_quantity, i.warehouse
+ORDER BY total_sold DESC;
+```
+
+### Aggregate inventory data per product
+```sql
+SELECT
+    s.product,
+    SUM(s.quantity) as total_sold,
+    MAX(i.stock_quantity) as current_stock,
+    COUNT(DISTINCT i.warehouse) as warehouse_count
+FROM 'sales_data.csv' s
+LEFT JOIN 'inventory.parquet' i ON s.product = i.product_name
+GROUP BY s.product
+ORDER BY total_sold DESC;
 ```
 
 ## Exporting Results
