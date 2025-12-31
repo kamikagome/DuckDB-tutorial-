@@ -1,0 +1,9 @@
+customer_id,customer_name,country,total_purchases,lifetime_value
+1001,TechCorp,USA,15,45000.50
+1002,DataInc,Canada,8,22000.00
+1003,CloudSys,UK,22,68000.75
+1004,WebDev Co,Germany,12,35000.25
+1005,AI Labs,USA,30,95000.00
+1006,DevOps Ltd,France,5,12000.50
+1007,Analytics Pro,Canada,18,54000.30
+1008,Code Masters,UK,9,28000.80

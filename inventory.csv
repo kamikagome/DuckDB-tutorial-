@@ -1,0 +1,6 @@
+product_id,product_name,stock_quantity,warehouse,last_restocked
+501,Laptop,45,A1,2024-01-10
+502,Mouse,230,A1,2024-01-15
+503,Keyboard,120,B2,2024-01-12
+504,Monitor,67,B2,2024-01-08
+505,Headphones,89,A1,2024-01-14
