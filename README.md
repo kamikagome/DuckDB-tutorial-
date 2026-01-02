@@ -326,8 +326,6 @@ This tutorial was created as an experimental project using Claude Code, an AI-po
 
 <div align="center">
 
-**⭐ If you found this tutorial helpful, please consider giving it a star!**
-
 Made with ❤️ for the data nerds
 
 </div>
